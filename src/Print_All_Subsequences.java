@@ -33,6 +33,8 @@ public class Print_All_Subsequences {
         array.add(1);
         array.add(2);
         array.add(3);
+        array.add(4);
+        array.add(5);
 
         ArrayList<Integer> sub = new ArrayList();
 
