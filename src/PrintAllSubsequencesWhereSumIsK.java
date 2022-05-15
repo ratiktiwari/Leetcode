@@ -32,6 +32,7 @@ public class PrintAllSubsequencesWhereSumIsK {
 
     public static int printF(int index, ArrayList<Integer> array, int sum, int k){
 
+        if(sum>k) return 0;  //Time complexity optimization with base case
         if(index==array.size()){
 
             if(sum==k) {
