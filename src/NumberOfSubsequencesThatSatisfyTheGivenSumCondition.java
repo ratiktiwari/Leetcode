@@ -52,7 +52,7 @@ public class NumberOfSubsequencesThatSatisfyTheGivenSumCondition {
 //
 //    }
 
-    public int numSubseq(int[] nums, int target) {
+    public static int numSubseq(int[] nums, int target) {
 
         //https://www.youtube.com/watch?v=xCsIkPLS4Ls
 

@@ -30,21 +30,46 @@ public class PrintAllSubsequencesWhereSumIsK {
 
     }
 
+    public static int printF(int index, ArrayList<Integer> array, int sum, int k){
+
+        if(index==array.size()){
+
+            if(sum==k) {
+                return 1;
+            }
+
+            else return 0;
+        }
+
+        //take operation
+        sum+=array.get(index);
+        int l = printF(index+1, array, sum, k);
+
+        //not take operation
+        sum-= array.get(index);
+        int r = printF(index+1, array, sum, k);
+
+        return l+r;
+    }
+
+
+
 
     public static void main(String[] args) {
         ArrayList<Integer> array = new ArrayList();
         array.add(1);
         array.add(2);
-        array.add(4);
-        array.add(7);
-        array.add(9);
-        array.add(6);
+        array.add(1);
+        array.add(3);
+        array.add(1);
 
         int sum = 0;
-        int k = 13;
+        int k = 5;
 
         ArrayList<Integer> sub = new ArrayList();
 
         printF(0, array, sub, sum, k);
+        System.out.println();
+        System.out.println(printF(0, array, sum, k));
     }
 }
