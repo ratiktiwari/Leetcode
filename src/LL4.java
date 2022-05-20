@@ -10,23 +10,38 @@ public class LL4 {
 
     public ListNode reverseList(ListNode head) {
 
+        //iterative approach
+//        if(head == null || head.next==null){
+//            return head;
+//        }
+//
+//        ListNode i = head;
+//        ListNode j = head.next;
+//        ListNode temp = null;
+//
+//        while(j!=null){
+//            i.next = temp;
+//            temp=i;
+//            i = j;
+//            j=j.next;
+//        }
+//
+//        i.next=temp;
+//        return i;
+
+
+//        recursive approach
         if(head == null || head.next==null){
             return head;
         }
 
-        ListNode i = head;
-        ListNode j = head.next;
-        ListNode temp = null;
+        ListNode newHead = reverseList(head.next);
 
-        while(j!=null){
-            i.next = temp;
-            temp=i;
-            i = j;
-            j=j.next;
-        }
+        head.next.next = head;
+        head.next = null;
 
-        i.next=temp;
-        return i;
+        return newHead;
+
 
     }
 
