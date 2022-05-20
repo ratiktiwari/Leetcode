@@ -20,5 +20,10 @@ public class LL3 {
 //            node.val = nextNode.val;
 //            node.next=null;
 
+        //best approach
+
+        node.val = node.next.val;
+        node.next = node.next.next;
+
     }
 }
