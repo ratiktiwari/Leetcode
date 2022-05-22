@@ -11,19 +11,19 @@
 class Solution {
     public ListNode reverse(ListNode head){
 
-        if(head==null || head.next==null){
-            return head;
+        ListNode prev = null;
+        ListNode temp = null;
+
+        while(head!=null){
+            temp = head.next;
+            head.next = prev;
+            prev = head;
+            head = temp;
         }
 
-        ListNode newHead = reverse(head.next);
+        return prev;
 
-        head.next.next = head;
-        head.next = null;
-
-
-        return newHead;
-
-  }
+    }
 
     public int pairSum(ListNode head) {
 
