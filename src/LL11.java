@@ -33,10 +33,10 @@ public class LL11 {
 
 
 
-    public BrowserHistory(String homepage) {
-        head = new ListNode(homepage);
-        cursor = head;
-    }
+//    public BrowserHistory(String homepage) {
+//        head = new ListNode(homepage);
+//        cursor = head;
+//    }
 
     public void visit(String url) {
         ListNode newNode = new ListNode(url);
