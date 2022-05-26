@@ -5,9 +5,13 @@ public class Stack {
     int top;
     int a[] = new int[max];
 
+    Stack(){
+        top=-1;
+    }
+
     public void push(int data){
 
-        if(top>=max){
+        if(top>=max-1){
             System.out.println("Overflow");
             return;
         }
@@ -19,9 +23,29 @@ public class Stack {
 
     }
 
-//    public int pop(){
-//
-//    }
+    public int pop(){
+        if(top<0){
+            System.out.println("Underflow");
+            return -1;
+        }
+
+        int popped = a[top--];
+        return popped;
+    }
+
+    public int peek(){
+        if(top<0){
+            System.out.println("Underflow");
+        }
+
+        return a[top];
+    }
+
+    public void printStack(){
+        for(int i=top; i>=0; i--){
+            System.out.println(a[i]);
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -31,7 +55,12 @@ public class Stack {
         s.push(20);
         s.push(30);
 
-//        System.out.println(s.pop());
+        System.out.println(s.pop() + " popped");
+        System.out.println(s.peek() + " peeked");
+
+        System.out.println("Stack is :");
+
+        s.printStack();
     }
 
 }
