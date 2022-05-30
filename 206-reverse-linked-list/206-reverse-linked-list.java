@@ -14,19 +14,21 @@ class Solution {
     
     public ListNode reverseList(ListNode head) {
         
-        
         if(head==null || head.next==null){
             return head;
         }
         
-        ListNode newHead = reverseList(head.next);
+        ListNode prev = null;
+        ListNode next = null;
         
-        head.next.next = head;
-        head.next = null;
+        while(head!=null){
+            next = head.next;
+            head.next=prev;
+            prev = head;
+            head=next;
+        }
         
-        return newHead;
-        
-    
+        return prev;
         
     }
 }
