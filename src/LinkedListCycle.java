@@ -2,20 +2,19 @@ public class LinkedListCycle {
 
     public boolean hasCycle(ListNode head) {
 
-        if(head==null || head.next==null){
+        if(head==null){
             return false;
         }
 
         ListNode slow = head;
-        ListNode fast = head.next;
+        ListNode fast = head;
 
-        while(slow!=fast && fast!=null && fast.next!=null){
+        while(fast.next!=null && fast.next.next!=null){
             slow=slow.next;
             fast=fast.next.next;
-        }
-
-        if(slow==fast){
-            return true;
+            if(slow==fast){
+                return true;
+            }
         }
 
         return false;
